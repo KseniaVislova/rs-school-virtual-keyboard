@@ -1,9 +1,10 @@
-export function createEl(tag, className, text) {
+export function createEl(tag, classNames, text) {
   const element = document.createElement(tag);
-  element.classList.add(className);
-  if (tag === 'h1') {
-    element.classList.add('glitch');
-  }
+
+  classNames.forEach(item => {
+    element.classList.add(item);
+  })
+  
   element.innerHTML = text;
   return element;
 }
