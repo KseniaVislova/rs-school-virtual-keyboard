@@ -1,12 +1,22 @@
-//@import 'abstracts/variables';
-//@import 'vendors/normalize';
-//@import 'base/*';
-// @import 'layout/*';
-// @import 'components/*';
-// @import 'pages/*';
-// @import 'themes/*';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/glitch';
+@import 'abstracts/animation';
 
-// body {
-//   color: $main-text;
-//   background-color: $body-color;
-// }
+@import 'vendors/normalize';
+
+//@import 'base/*';
+
+@import 'layout/wrapper';
+@import 'layout/container';
+@import 'layout/popup';
+
+@import 'components/title';
+@import 'components/textarea';
+@import 'components/keyboard';
+@import 'components/key';
+@import 'components/description';
+
+// @import 'pages/*';
+
+//@import 'themes/*';
