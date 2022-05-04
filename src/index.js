@@ -1,13 +1,5 @@
-import './assets/styles/style.css';
-import "./assets/styles/main.scss";
+import './styles/style.css';
+import "./styles/main.scss";
+import content from "./js/content";
 
-// function component() {
-//   const element = document.createElement('div');
-
-//   element.innerHTML = "Hello!"
-//   element.classList.add('hello');
-
-//   return element;
-//  }
-
-//  document.body.appendChild(component());
+content();
