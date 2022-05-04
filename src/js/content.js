@@ -6,7 +6,7 @@ const WRAPPER = document.querySelector('.wrapper');
 const content = () => {
   let container = createEl('div', 'container', '');
 
-  let title = createEl(data.title.tag, data.title.className, data.title.text);
+  let title = createEl('h1', 'title', 'Virtual Keyboard');
   let textarea = createEl('textarea', 'textarea', '')
 
   addHtml(WRAPPER, container);
