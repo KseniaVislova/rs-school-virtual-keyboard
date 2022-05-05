@@ -9,25 +9,24 @@ const content = () => {
   let title = createEl('h1', ['title', 'glitch'], 'Virtual Keyboard');
   let textarea = createEl('textarea', ['textarea'], '');
   let keyboard = createEl('div', ['keyboard'], '');
-  let keyRow = createEl('div', ['keyboard__inner'], '');
 
   addHtml(WRAPPER, container);
   addHtml(container, title);
   addHtml(container, textarea);
   addHtml(container, keyboard);
-  addHtml(keyboard, keyRow);
 
-  let keyRow1 = data.en;
-  keyRow1 = keyRow1["keys-row-1"];
+  const DATA = data.en;
+  console.log(DATA)
 
-  console.log(keyRow1)
-
-  for (let i = 0; i < keyRow1.length; i++) {
-    let key = createEl('button', keyRow1[i].classes, keyRow1[i].key);
-
-    addHtml(keyRow, key);
+  for (let i in DATA) {
+    let keyRow = createEl('div', ['keyboard__inner'], '');
+    addHtml(keyboard, keyRow);
+    let arr = DATA[i];
+    for (let i = 0; i < arr.length; i++) {
+      let key = createEl('button', arr[i].classes, arr[i].key);
+      addHtml(keyRow, key);
+    }
   }
-
 };
 
 export default content;
