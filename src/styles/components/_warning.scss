@@ -1,0 +1,13 @@
+.warning {
+  position: relative;
+  @include size(400px, auto);
+  @include flex(center, center, column);
+  padding: 20px;
+  margin: 0 auto 2rem;
+  background-color: $glitch;
+  border-radius: 15px;
+
+  &__text {
+    text-align: center;
+  }
+}

@@ -16,7 +16,6 @@ const content = () => {
   addHtml(container, keyboard);
 
   const DATA = data.en;
-  console.log(DATA)
 
   for (let i in DATA) {
     let keyRow = createEl('div', ['keyboard__inner'], '');
@@ -27,6 +26,12 @@ const content = () => {
       addHtml(keyRow, key);
     }
   }
+
+  let warning = createEl('div', ['warning'], '');
+  let warningText = createEl('p', ['warning__text'], 'Клавиатура создана на операционной системе Windows. Для переключения языка используйте комбинация: SHIFT + ALT.');
+
+  addHtml(container, warning);
+  addHtml(warning, warningText);
 };
 
 export default content;

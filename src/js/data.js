@@ -71,7 +71,7 @@ const data = {
       {'key': '&#706', 'classes': ['key-square', 'key', 'key-special']},
       {'key': '&#709', 'classes': ['key-square', 'key', 'key-special']},
       {'key': '&#707', 'classes': ['key-square', 'key', 'key-special']},
-      {'key': 'ctrl', 'classes': ['key-square', 'key', 'ctrl', 'key-special']},
+      {'key': 'ctrl', 'classes': ['key-square', 'key', 'ctrl', 'key-special']}
     ]
     }
 }
