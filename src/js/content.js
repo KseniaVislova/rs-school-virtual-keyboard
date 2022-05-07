@@ -1,16 +1,17 @@
 import data from "./data";
 import { createEl , addHtml } from "./functions";
 
-const WRAPPER = document.querySelector('.wrapper');
+const BODY = document.body;
 
 const content = () => {
+  let wrapper = createEl('div', ['wrapper'], '');
   let container = createEl('div', ['container'], '');
-
   let title = createEl('h1', ['title', 'glitch'], 'Virtual Keyboard');
   let textarea = createEl('textarea', ['textarea'], '');
   let keyboard = createEl('div', ['keyboard'], '');
 
-  addHtml(WRAPPER, container);
+  addHtml(BODY, wrapper);
+  addHtml(wrapper, container);
   addHtml(container, title);
   addHtml(container, textarea);
   addHtml(container, keyboard);
