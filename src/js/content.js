@@ -3,7 +3,7 @@ import { createEl , addHtml } from "./functions";
 
 const BODY = document.body;
 
-const content = () => {
+const generateContent = () => {
   let wrapper = createEl('div', ['wrapper'], '');
   let container = createEl('div', ['container'], '');
   let title = createEl('h1', ['title', 'glitch'], 'Virtual Keyboard');
@@ -35,4 +35,4 @@ const content = () => {
   addHtml(warning, warningText);
 };
 
-export default content;
+export default generateContent;

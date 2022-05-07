@@ -1,5 +1,5 @@
 import './styles/style.css';
 import "./styles/main.scss";
-import content from "./js/content";
+import generateContent from "./js/content";
 
-content();
+generateContent();
