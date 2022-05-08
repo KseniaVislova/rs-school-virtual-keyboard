@@ -1,5 +1,6 @@
 import data from "./data";
 import { createEl , addHtml} from "./functions";
+import listenEvent from "./keys";
 
 const BODY = document.body;
 let lang = 'en';
@@ -47,6 +48,7 @@ document.addEventListener('keydown', (event) => {
 
   let keyboard = document.querySelector('.keyboard');
   createKeys(keyboard, DATA);
+  listenEvent();
 })
 
 document.addEventListener('keyup', function(event) {
