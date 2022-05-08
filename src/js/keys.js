@@ -3,6 +3,7 @@ const listenEvent = () => {
   const textarea = document.querySelector('.textarea');
   let text = textarea.textContent;
   let cursor = textarea.selectionStart;
+  let uppercase = false;
 
   document.addEventListener('keydown', (event) => {
 
@@ -50,6 +51,28 @@ const listenEvent = () => {
         text += ' ';
         textarea.textContent = text;
         textarea.selectionStart = cursor + 1;
+      }
+      if(item.classList.contains('capslock')) {
+        textarea.focus();
+        uppercase = !uppercase;
+        console.log(uppercase)
+        if (uppercase) {
+          item.classList.add('active')
+          KEYS.forEach(item => {
+            if(!item.classList.contains('key-special')) {
+              let text = item.textContent.toUpperCase();
+              item.textContent = text;
+            }
+          })
+        } else {
+          KEYS.forEach(item => {
+            item.classList.remove('active')
+            if(!item.classList.contains('key-special')) {
+              let text = item.textContent.toLowerCase();
+              item.textContent = text;
+            }
+          })
+        }
       }
     })
   })
