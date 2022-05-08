@@ -37,6 +37,20 @@ const listenEvent = () => {
         textarea.textContent = text;
         textarea.selectionStart = cursor + 1;
       }
+      if(item.classList.contains('backspace')) {
+        textarea.focus();
+        cursor = textarea.selectionStart;
+        text = text.slice(0, -1);
+        textarea.textContent = text;
+        textarea.selectionStart = cursor - 1;
+      }
+      if(item.classList.contains('space')) {
+        textarea.focus();
+        cursor = textarea.selectionStart;
+        text += ' ';
+        textarea.textContent = text;
+        textarea.selectionStart = cursor + 1;
+      }
     })
   })
 

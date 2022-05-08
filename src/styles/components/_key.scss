@@ -10,7 +10,7 @@
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &-square {
     @include size(40px);
@@ -34,7 +34,7 @@
 
   &:hover {
     background-color: $main-grey;
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -69,5 +69,5 @@
 .active {
   background-color: $main-grey;
   border-radius: 50%;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
