@@ -21,6 +21,14 @@ const listenEvent = (u) => {
       textarea.value = text;
     }
 
+    if (event.code === 'Tab') {
+      event.preventDefault();
+      textarea.focus();
+      text += `\t`;
+      console.log( "VALUE" ,textarea.value)
+      textarea.value = text;
+    }
+
     KEYS.forEach(item => {
       if (item.getAttribute('data-key') === event.code) {
         item.classList.add('active');
@@ -227,6 +235,14 @@ const listenEvent = (u) => {
         console.log( "VALUE" ,textarea.value)
         textarea.value = text;
       }
+
+      if (item.classList.contains('tab')) {
+        textarea.focus();
+        text += `\t`;
+        console.log( "VALUE" ,textarea.value)
+        textarea.value = text;
+      }
+  
     })
   })
 
