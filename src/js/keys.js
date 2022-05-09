@@ -58,14 +58,13 @@ const listenEvent = (u) => {
       if(!item.classList.contains('key-special') && item.getAttribute('data-key') === event.code) { 
         console.log(shift, uppercase)
         textarea.focus();
+        event.preventDefault();
+        console.log("press key", item.children[1].textContent)
         if(shift && uppercase) {
-          event.preventDefault();
           addText(item.children[1].textContent.toLocaleLowerCase())
          } else if (shift) {
-          event.preventDefault();
           addText(item.children[1].textContent)
         } else {
-          event.preventDefault();
           addText(item.children[0].textContent)
         }
       }
