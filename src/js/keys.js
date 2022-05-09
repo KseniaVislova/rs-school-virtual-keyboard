@@ -29,6 +29,23 @@ const listenEvent = (u) => {
       textarea.value = text;
     }
 
+    if (event.code === 'Delete') {
+      event.preventDefault();
+      textarea.focus();
+      cursor = textarea.selectionStart;
+      console.log( "Cursor" , cursor)
+      if (text.length >= cursor) {
+        let part1 = text.slice(0, cursor)
+        let part2 = text.slice(cursor + 1)
+        console.log(part1, part2)
+        text = part1 + part2
+        textarea.value = text;
+        textarea.selectionStart = cursor;
+        textarea.selectionEnd = cursor;
+        console.log( "Cursor2" , textarea.selectionStart)
+      }
+    }
+
     KEYS.forEach(item => {
       if (item.getAttribute('data-key') === event.code) {
         item.classList.add('active');
@@ -241,6 +258,22 @@ const listenEvent = (u) => {
         text += `\t`;
         console.log( "VALUE" ,textarea.value)
         textarea.value = text;
+      }
+
+      if (item.classList.contains('del')) {
+        textarea.focus();
+        cursor = textarea.selectionStart;
+        console.log( "Cursor" , cursor)
+        if (text.length >= cursor) {
+          let part1 = text.slice(0, cursor)
+          let part2 = text.slice(cursor + 1)
+          console.log(part1, part2)
+          text = part1 + part2
+          textarea.value = text;
+          textarea.selectionStart = cursor;
+          textarea.selectionEnd = cursor;
+          console.log( "Cursor2" , textarea.selectionStart)
+        }
       }
   
     })
