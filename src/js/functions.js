@@ -22,3 +22,16 @@ export function createEl(tag, classNames, text = '', shiftText = '', data = '') 
 export function addHtml(item, el) {
   item.appendChild(el);
 }
+
+export const addText = (item) => {
+  const textarea = document.querySelector('.textarea');
+  let text = textarea.value;
+  let cursor = textarea.selectionStart;
+  let part1 = text.slice(0, cursor)
+  let part2 = text.slice(cursor)
+  console.log(part1, part2)
+  text = part1 + item + part2;
+  textarea.value = text;
+  textarea.selectionStart = cursor + 1;
+  textarea.selectionEnd = cursor + 1;
+}
