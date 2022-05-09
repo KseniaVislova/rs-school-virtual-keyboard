@@ -1,4 +1,4 @@
-export function createEl(tag, classNames, text = '', data = '') {
+export function createEl(tag, classNames, text = '', shiftText = '', data = '') {
   const element = document.createElement(tag);
 
   if (classNames.length > 0) {
@@ -11,7 +11,11 @@ export function createEl(tag, classNames, text = '', data = '') {
     element.setAttribute('data-key', data);
   }
   
-  element.innerHTML = text;
+  if (text.length > 0) {
+    element.innerHTML = `<span class='main'>${text}</span><span class='second'>${shiftText}</span>`;
+  } else {
+    element.innerHTML = text;
+  }
   return element;
 }
 

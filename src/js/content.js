@@ -5,6 +5,7 @@ import listenEvent from "./keys";
 const BODY = document.body;
 let lang = 'en';
 let DATA = data.en;
+let uppercase = false;
 
 const createKeys = (keyboard, DATA) => {
   keyboard.innerHTML = '';
@@ -14,10 +15,10 @@ const createKeys = (keyboard, DATA) => {
     let arr = DATA[i];
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].data !== undefined) {
-        let key = createEl('button', arr[i].classes, arr[i].key, arr[i].data);
+        let key = createEl('button', arr[i].classes, arr[i].key, arr[i].shiftKey, arr[i].data);
         addHtml(keyRow, key);
       } else {
-        let key = createEl('button', arr[i].classes, arr[i].key);
+        let key = createEl('button', arr[i].classes, arr[i].key, arr[i].shiftKey);
         addHtml(keyRow, key);
       }
     }
@@ -44,11 +45,29 @@ document.addEventListener('keydown', (event) => {
     DATA = data.en;
   }
 
+  let capslock = document.querySelector('.capslock');
+  if (capslock.classList.contains('active')) {
+    uppercase = true;
+  } else {
+    uppercase = false;
+  }
+
   console.log('Изменение lang: ', lang)
 
   let keyboard = document.querySelector('.keyboard');
   createKeys(keyboard, DATA);
-  listenEvent();
+  listenEvent(uppercase);
+
+  if (uppercase) {
+    document.querySelector('.capslock').classList.add('active');
+    const KEYS = document.querySelectorAll('.key');
+    KEYS.forEach(item => {
+      if(!item.classList.contains('key-special')) {
+        let text = item.children[0].textContent.toUpperCase();
+        item.children[0].textContent = text;
+      }
+    })
+  }
 })
 
 document.addEventListener('keyup', function(event) {
