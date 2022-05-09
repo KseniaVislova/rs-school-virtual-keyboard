@@ -1,4 +1,4 @@
-export function createEl(tag, classNames, text = '', shiftText = '', data = '') {
+export const createEl = (tag, classNames, text = '', shiftText = '', data = '') => {
   const element = document.createElement(tag);
 
   if (classNames.length > 0) {
@@ -19,7 +19,7 @@ export function createEl(tag, classNames, text = '', shiftText = '', data = '') 
   return element;
 }
 
-export function addHtml(item, el) {
+export const addHtml = (item, el) => {
   item.appendChild(el);
 }
 
