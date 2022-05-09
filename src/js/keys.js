@@ -112,11 +112,21 @@ const listenEvent = (u) => {
           }
         })
 
+        console.log(uppercase, shift)
         if (uppercase === true && shift === true) {
           item.classList.add('active');
           KEYS.forEach(item => {
             if(!item.classList.contains('key-special')) {
               let text = item.children[1].textContent.toLowerCase();
+              item.children[1].textContent = text;
+            }
+          })
+        }
+        if (uppercase === false && shift === true) {
+          item.classList.add('active');
+          KEYS.forEach(item => {
+            if(!item.classList.contains('key-special')) {
+              let text = item.children[1].textContent.toUpperCase();
               item.children[1].textContent = text;
             }
           })
