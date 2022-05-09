@@ -7,6 +7,8 @@ const listenEvent = (u) => {
   let cursor = textarea.selectionStart;
   let shift = false;
   let uppercase = u;
+  const codes = ["ShiftLeft", "AltLeft"];
+  let pressed = [];
 
   //Нажатие кнопки
 
@@ -14,6 +16,17 @@ const listenEvent = (u) => {
     console.log(uppercase)
     console.log(textarea)
     console.log('event.code', event.code)
+
+    pressed.push(event.code);
+
+    if (pressed.indexOf(codes[0]) === -1) {
+      pressed = [];
+    }
+
+    if (pressed.indexOf(codes[0]) !== -1 && pressed.indexOf(codes[0]) + 1 === pressed.indexOf(codes[1])) {
+      console.log('Функция перестает свое выполнение')
+      return;
+    }
 
     if (event.code === 'Enter') {
       event.preventDefault();
@@ -56,9 +69,11 @@ const listenEvent = (u) => {
       }
 
       if(!item.classList.contains('key-special') && item.getAttribute('data-key') === event.code) { 
+        event.preventDefault();
+        console.log(item)
+        console.log(event.code)
         console.log(shift, uppercase)
         textarea.focus();
-        event.preventDefault();
         console.log("press key", item.children[1].textContent)
         if(shift && uppercase) {
           addText(item.children[1].textContent.toLocaleLowerCase())
