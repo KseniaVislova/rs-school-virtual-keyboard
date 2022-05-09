@@ -19,7 +19,7 @@ const listenEvent = (u) => {
       pressed = [];
     }
 
-    if (pressed.indexOf(codes[0]) !== -1 && pressed.indexOf(codes[0]) + 1 === pressed.indexOf(codes[1])) {
+    if (pressed.indexOf(codes[0]) !== -1 && pressed.indexOf(codes[0]) + 1 === pressed.indexOf(codes[1]) || pressed.length > 2) {
       return;
     }
 
