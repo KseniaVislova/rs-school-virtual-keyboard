@@ -56,6 +56,7 @@ document.addEventListener('keydown', (event) => {
 
   let keyboard = document.querySelector('.keyboard');
   createKeys(keyboard, DATA);
+  console.log(uppercase)
   listenEvent(uppercase);
 
   if (uppercase) {

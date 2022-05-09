@@ -1,13 +1,25 @@
-const listenEvent = (uppercase) => {
+const listenEvent = (u) => {
   const KEYS = document.querySelectorAll('.key');
   const textarea = document.querySelector('.textarea');
-  let text = textarea.textContent;
+  let text = textarea.value;
   let cursor = textarea.selectionStart;
   let shift = false;
+  let uppercase = u;
 
   //Нажатие кнопки
 
   document.addEventListener('keydown', (event) => {
+    console.log(uppercase)
+    console.log(textarea)
+    console.log('event.code', event.code)
+
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      textarea.focus();
+      text += `\n`;
+      console.log( "VALUE" ,textarea.value)
+      textarea.value = text;
+    }
 
     KEYS.forEach(item => {
       if (item.getAttribute('data-key') === event.code) {
@@ -20,20 +32,21 @@ const listenEvent = (uppercase) => {
           cursor = textarea.selectionStart;
           event.preventDefault();
           text += item.children[1].textContent.toLocaleLowerCase();
-          console.log(text)
-          textarea.textContent = text;
+          console.log("TEXT",text)
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
          } else if (shift) {
           cursor = textarea.selectionStart;
           event.preventDefault();
-          text += item.children[1].textContent;
-          textarea.textContent = text;
+          text += item.children[1].textContent;;
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
         } else {
           cursor = textarea.selectionStart;
           event.preventDefault();
           text += item.children[0].textContent;
-          textarea.textContent = text;
+          console.log("TEXT",text)
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
         }
       }
@@ -131,17 +144,17 @@ const listenEvent = (uppercase) => {
         if (shift === true && uppercase === true) {
           cursor = textarea.selectionStart;
           text += item.children[1].textContent.toLocaleLowerCase();
-          textarea.textContent = text;
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
         } else if(shift) {
           cursor = textarea.selectionStart;
           text += item.children[1].textContent;
-          textarea.textContent = text;
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
         } else {
           cursor = textarea.selectionStart;
           text += item.children[0].textContent;
-          textarea.textContent = text;
+          textarea.value = text;
           textarea.selectionStart = cursor + 1;
         }
       }
@@ -150,7 +163,7 @@ const listenEvent = (uppercase) => {
         textarea.focus();
         cursor = textarea.selectionStart;
         text = text.slice(0, -1);
-        textarea.textContent = text;
+        textarea.value = text;
         textarea.selectionStart = cursor - 1;
       }
 
@@ -158,7 +171,7 @@ const listenEvent = (uppercase) => {
         textarea.focus();
         cursor = textarea.selectionStart;
         text += ' ';
-        textarea.textContent = text;
+        textarea.value = text;
         textarea.selectionStart = cursor + 1;
       }
 
@@ -206,6 +219,13 @@ const listenEvent = (uppercase) => {
             }
           })
         }
+      }
+
+      if (item.classList.contains('enter')) {
+        textarea.focus();
+        text += `\n`;
+        console.log( "VALUE" ,textarea.value)
+        textarea.value = text;
       }
     })
   })
