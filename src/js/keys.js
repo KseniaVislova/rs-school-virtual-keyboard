@@ -184,14 +184,6 @@ const listenEvent = (u) => {
         }
       }
 
-      if(item.classList.contains('backspace')) {
-        textarea.focus();
-        cursor = textarea.selectionStart;
-        text = text.slice(0, -1);
-        textarea.value = text;
-        textarea.selectionStart = cursor - 1;
-      }
-
       if(item.classList.contains('space')) {
         textarea.focus();
         cursor = textarea.selectionStart;
@@ -274,6 +266,18 @@ const listenEvent = (u) => {
           textarea.selectionEnd = cursor;
           console.log( "Cursor2" , textarea.selectionStart)
         }
+      }
+
+      if(item.classList.contains('backspace')) {
+        textarea.focus();
+        cursor = textarea.selectionStart;
+        let part1 = text.slice(0, cursor - 1)
+          let part2 = text.slice(cursor)
+          console.log(part1, part2)
+          text = part1 + part2
+          textarea.value = text;
+          textarea.selectionStart = cursor - 1;
+          textarea.selectionEnd = cursor - 1;
       }
   
     })
