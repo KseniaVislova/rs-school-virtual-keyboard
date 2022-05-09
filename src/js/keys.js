@@ -29,6 +29,15 @@ const listenEvent = (u) => {
       textarea.value = text;
     }
 
+    if(event.code === 'Space') {
+      event.preventDefault();
+      textarea.focus();
+      cursor = textarea.selectionStart;
+      text += ' ';
+      textarea.value = text;
+      textarea.selectionStart = cursor + 1;
+    }
+
     if (event.code === 'Delete') {
       event.preventDefault();
       textarea.focus();
