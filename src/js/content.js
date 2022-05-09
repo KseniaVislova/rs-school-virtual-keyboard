@@ -32,7 +32,7 @@ document.addEventListener("keydown", (event) => {
   pressed.add(event.code);
 
   for (let code of codes) {
-    if (!pressed.has(code)) {
+    if (!pressed.has(code) || pressed.size > 2) {
       return;
     }
   }
