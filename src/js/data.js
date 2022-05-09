@@ -59,7 +59,7 @@ const data = {
       {'key': ',', 'classes': ['key-square', 'key'], 'data': 'Comma', 'shiftKey': '<'}, 
       {'key': '.', 'classes': ['key-square', 'key'], 'data': 'Period', 'shiftKey': '>'}, 
       {'key': '/', 'classes': ['key-square', 'key'], 'data': 'Slash', 'shiftKey': '?'},
-      {'key': '&#708', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowUp', 'shiftKey': '&#708'},
+      {'key': '▲', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowUp', 'shiftKey': '▲'},
       {'key': 'shift', 'classes': ['key-special', 'key', 'shift-2'], 'data': 'ShiftRight', 'shiftKey': 'shift'}, 
     ],
     'keys-row-5': [
@@ -68,9 +68,9 @@ const data = {
       {'key': 'alt', 'classes': ['key-square', 'key', 'alt', 'key-special'], 'data': 'AltLeft', 'shiftKey': 'alt'},
       {'key': '', 'classes': ['key', 'space', 'key-special'], 'data': 'Space', 'shiftKey': ''},
       {'key': 'alt', 'classes': ['key-square', 'key', 'alt', 'key-special'], 'data': 'AltRight', 'shiftKey': 'alt'},
-      {'key': '&#706', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowLeft', 'shiftKey': '&#706'},
-      {'key': '&#709', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowDown', 'shiftKey': '&#709'},
-      {'key': '&#707', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowRight', 'shiftKey': '&#707'},
+      {'key': '◄', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowLeft', 'shiftKey': '◄'},
+      {'key': '▼', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowDown', 'shiftKey': '▼'},
+      {'key': '►', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowRight', 'shiftKey': '►'},
       {'key': 'ctrl', 'classes': ['key-square', 'key', 'ctrl', 'key-special'], 'data': 'ControlRight', 'shiftKey': 'ctrl'}
     ]
     },
@@ -134,7 +134,7 @@ const data = {
       {'key': 'б', 'classes': ['key-square', 'key'], 'data': 'Comma', 'shiftKey': 'Б'}, 
       {'key': 'ю', 'classes': ['key-square', 'key'], 'data': 'Period', 'shiftKey': 'Ю'}, 
       {'key': '.', 'classes': ['key-square', 'key'], 'data': 'Slash', 'shiftKey': ','},
-      {'key': '&#708', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowUp', 'shiftKey': '&#708'},
+      {'key': '▲', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowUp', 'shiftKey': '▲'},
       {'key': 'shift', 'classes': ['key-special', 'key', 'shift-2'], 'data': 'ShiftRight', 'shiftKey': 'shift'}, 
     ],
     'keys-row-5': [
@@ -143,9 +143,9 @@ const data = {
       {'key': 'alt', 'classes': ['key-square', 'key', 'alt', 'key-special'], 'data': 'AltLeft', 'shiftKey': 'alt'},
       {'key': '', 'classes': ['key', 'space', 'key-special'], 'data': 'Space', 'shiftKey': ''},
       {'key': 'alt', 'classes': ['key-square', 'key', 'alt', 'key-special'], 'data': 'AltRight', 'shiftKey': 'alt'},
-      {'key': '&#706', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowLeft', 'shiftKey': '&#706'},
-      {'key': '&#709', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowDown', 'shiftKey': '&#709'},
-      {'key': '&#707', 'classes': ['key-square', 'key', 'key-special'], 'data': 'ArrowRight', 'shiftKey': '&#707'},
+      {'key': '◄', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowLeft', 'shiftKey': '◄'},
+      {'key': '▼', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowDown', 'shiftKey': '▼'},
+      {'key': '►', 'classes': ['key-square', 'key', 'key-arrow'], 'data': 'ArrowRight', 'shiftKey': '►'},
       {'key': 'ctrl', 'classes': ['key-square', 'key', 'ctrl', 'key-special'], 'data': 'ControlRight', 'shiftKey': 'ctrl'}
     ]
     }

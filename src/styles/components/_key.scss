@@ -21,6 +21,11 @@
     background-color: $keyboard;
   }
 
+  &-arrow {
+    @include size(auto, 40px);
+    background-color: $keyboard;
+  }
+
   &__inner {
     @include flex(center, center, column);
     gap: 5px;
