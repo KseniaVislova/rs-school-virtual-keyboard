@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; 
+}
+
+.scroll-auto {
+  scroll-behavior: auto; 
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font;
+  color: $main-text;
+  background-color: $body-color;
+  background-color: $body-color;
+}
+
+.wrapper {
+  min-height: 100vh;
+  padding: 50px 0;
+  @include flex;
+}

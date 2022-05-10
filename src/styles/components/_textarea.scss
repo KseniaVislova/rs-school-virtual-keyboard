@@ -1,0 +1,10 @@
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid $border;
+  box-shadow: 0 0 20px 0 $glitch;
+  border-radius: 15px;
+  outline: none;
+}

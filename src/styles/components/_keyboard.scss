@@ -1,0 +1,15 @@
+.keyboard {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  @include flex(center, stretch, column, wrap);
+  gap: 5px;
+  background-color: $border;
+  box-shadow: 0 0 5px 0 $glitch;
+  border-radius: 15px;
+
+  &__inner {
+    @include flex(space-between);
+    gap: 5px;
+  }
+}
