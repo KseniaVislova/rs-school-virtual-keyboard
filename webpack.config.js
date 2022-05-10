@@ -5,8 +5,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, ''),
-    filename: '[hash].js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
     clean: true
   },
   module: {
