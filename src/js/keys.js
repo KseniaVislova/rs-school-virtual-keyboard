@@ -19,7 +19,7 @@ const listenEvent = (u) => {
       pressed = [];
     }
 
-    if (pressed.indexOf(codes[0]) !== -1 && pressed.indexOf(codes[0]) + 1 === pressed.indexOf(codes[1]) || pressed.length > 2) {
+    if (pressed.indexOf(codes[0]) !==  -1 && pressed.indexOf(codes[1]) !==  -1) {
       return;
     }
 
@@ -94,7 +94,7 @@ const listenEvent = (u) => {
         }
       }
 
-      if(item.getAttribute("data-key") === event.code && (item.classList.contains("shift-1") || item.classList.contains("shift-2"))) {
+      if(item.getAttribute("data-key") === event.code && ((item.classList.contains("shift-1") || item.classList.contains("shift-2")))) {
         textarea.focus();
         item.classList.add("active");
         shift = true;
@@ -136,12 +136,13 @@ const listenEvent = (u) => {
   //Отпускаем кнопку
 
   document.addEventListener("keyup", (event) => {
+
     KEYS.forEach(item => {
       if (item.getAttribute("data-key") === event.code && !item.classList.contains("capslock")) {
         item.classList.remove("active");
       }
 
-      if(item.getAttribute("data-key") === event.code && (item.classList.contains("shift-1" || item.classList.contains("shift-2")))) {
+      if(item.getAttribute("data-key") === event.code && (item.classList.contains("shift-1") || item.classList.contains("shift-2"))) {
         textarea.focus();
         item.classList.remove("active");
         shift = false;
